@@ -24,10 +24,23 @@ const CryptoTable = () => {
       width: "5%",
     },
     {
+      title: "Symbol",
+      dataIndex: "symbol",
+      width: "5%",
+      render: (symbol) => (
+        <span className="flex gap-3">
+          {symbol}{" "}
+          <img
+            className=" w-5  "
+            src={`https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`}
+            alt="logo"
+          />
+        </span>
+      ),
+    },
+    {
       title: "Name",
       dataIndex: "name",
-
-      width: "20%",
     },
     {
       title: "Price",
@@ -67,7 +80,20 @@ const CryptoTable = () => {
     {
       title: "Change 24hr",
       dataIndex: "changePercent24Hr",
-      render: (changePercent24Hr) => `${Number(changePercent24Hr).toFixed(2)}`,
+      render: (changePercent24Hr) => (
+        <span>
+          {changePercent24Hr < 0 ? (
+            <span className="text-red-500">
+              {Number(changePercent24Hr).toFixed(2)} %
+            </span>
+          ) : (
+            <span className="text-green-500">
+              {" "}
+              {Number(changePercent24Hr).toFixed(2)}%
+            </span>
+          )}
+        </span>
+      ),
     },
   ];
 
