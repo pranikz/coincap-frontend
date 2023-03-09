@@ -10,10 +10,11 @@ const CryptoTable = () => {
   const { cryptoCoins } = useSelector((state) => state.cryptoCoins);
   const isLoading = useSelector((state) => state.cryptoCoins.isLoading);
   const [page, setPage] = useState(1);
-
+// eslint-disable-next-line
   useEffect(() => {
-    dispatch(fetchCryptoCoins(page));
-  }, [page]);
+    dispatch(fetchCryptoCoins(page));// eslint-disable-next-line
+  }, [page]);// eslint-disable-next-line
+  // eslint-disable-next-line
 
   console.log("api hit ", cryptoCoins);
 
