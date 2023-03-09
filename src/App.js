@@ -1,7 +1,12 @@
 import "./App.css";
+import Cryptotable from "./Components/cryptoTable";
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div>
+      <Cryptotable />
+    </div>
+  );
 }
 
 export default App;

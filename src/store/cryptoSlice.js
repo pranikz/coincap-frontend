@@ -12,7 +12,9 @@ export const fetchCryptoCoins = createAsyncThunk(
   "cryptoCoins",
   async (page) => {
     try {
-      const responce = await axios.get(`https://api.coincap.io/v2/assets`);
+      const responce = await axios.get(
+        `https://api.coincap.io/v2/assets/?limit=${page * 50}`
+      );
       const data = { data: responce.data.data };
       return data;
     } catch (error) {
