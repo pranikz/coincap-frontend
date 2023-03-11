@@ -85,6 +85,9 @@ const Navvbar = () => {
               />
             </svg>
           </a>
+          <button className="rounded-3xl bg-green-500 h-10  px-2 text-white">
+            Connect Wallet
+          </button>
         </div>
       </nav>
     </div>

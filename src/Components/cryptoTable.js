@@ -114,7 +114,7 @@ const CryptoTable = () => {
             }}
             loading={isLoading}
           ></Table>
-          <div className="flex justify-end px-4">
+          <div className="flex justify-center px-4">
             <button
               className="bg-green-400 h-10 w-20 rounded-lg "
               onClick={changePage}
