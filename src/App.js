@@ -5,7 +5,7 @@ import Navvbar from "./Components/Navvbar";
 
 function App() {
   return (
-    <div>
+    <div className="bg-gray-100">
       <Navvbar/>
       <Herobar />
       <Cryptotable />
