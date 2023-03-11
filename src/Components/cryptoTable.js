@@ -10,10 +10,10 @@ const CryptoTable = () => {
   const { cryptoCoins } = useSelector((state) => state.cryptoCoins);
   const isLoading = useSelector((state) => state.cryptoCoins.isLoading);
   const [page, setPage] = useState(1);
-// eslint-disable-next-line
+  // eslint-disable-next-line
   useEffect(() => {
-    dispatch(fetchCryptoCoins(page));// eslint-disable-next-line
-  }, [page]);// eslint-disable-next-line
+    dispatch(fetchCryptoCoins(page)); // eslint-disable-next-line
+  }, [page]); // eslint-disable-next-line
   // eslint-disable-next-line
 
   console.log("api hit ", cryptoCoins);
@@ -102,25 +102,26 @@ const CryptoTable = () => {
     setPage((pre) => pre + 1);
   };
   return (
-    <div>
-      <h1 className="flex justify-center text-5xl py-2">Crypto Table</h1>
-
-      <div>
-        <Table
-          columns={columns}
-          dataSource={cryptoCoins}
-          pagination={{
-            defaultPageSize: 50,
-          }}
-          loading={isLoading}
-        ></Table>
-        <div className="flex justify-end px-4">
-          <button
-            className="bg-green-400 h-10 w-20 rounded-lg "
-            onClick={changePage}
-          >
-            loadmore
-          </button>
+    <div className="flex justify-center">
+      <div className="-mt-28 z-10 container">
+        <div>
+          <Table
+            rowKey="rank"
+            columns={columns}
+            dataSource={cryptoCoins}
+            pagination={{
+              defaultPageSize: 50,
+            }}
+            loading={isLoading}
+          ></Table>
+          <div className="flex justify-end px-4">
+            <button
+              className="bg-green-400 h-10 w-20 rounded-lg "
+              onClick={changePage}
+            >
+              loadmore
+            </button>
+          </div>
         </div>
       </div>
     </div>
